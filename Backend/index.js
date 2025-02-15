@@ -6,7 +6,7 @@ const cors = require("cors")
 
 const app = express()
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "*",
     optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
     methods: ["GET,POST,PUT,DELETE"],
     credentials: true,
