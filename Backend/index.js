@@ -3,27 +3,25 @@ const { connectDB } = require("./dbConfig");
 const { noteRouter } = require("./routes/note.routes");
 const { userRouter } = require("./routes/user.routes");
 const cors = require("cors");
+const serverless = require("serverless-http");
 
 const app = express();
 
-// ✅ Fix CORS Configuration
+// ✅ Enable CORS
 app.use(cors({
-    origin: "http://localhost:5173",  // Replace with your frontend URL
-    methods: ["GET", "POST", "PUT", "DELETE"], // Fixed methods array
-    credentials: true, // Allow cookies/auth headers
+    origin: "https://your-frontend.vercel.app",  // Change to your frontend URL
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
 }));
 
-// ✅ Handle Preflight Requests Properly
-app.options("*", cors());
-
 app.use(express.json());
-app.use("/",
-    console.log("hello")
-)
+
 app.use("/users", userRouter);
 app.use("/notes", noteRouter);
 
-app.listen(8080, () => {
-    connectDB();
-    console.log("Server is running at http://localhost:8080");
-});
+// ✅ Connect to database
+connectDB().then(() => console.log("Database connected")).catch(err => console.error("DB connection error:", err));
+
+// ✅ Export for Vercel (Fixes crashes)
+module.exports = app;
+module.exports.handler = serverless(app);
