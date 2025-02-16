@@ -10,7 +10,7 @@ const CreateNote = () =>{
             description
         }
 
-        fetch("https://notestaking-app-6w1m.onrender.com/notes", {
+        fetch("https://notes-taking-app-teal.vercel.app/notes", {
             method: "POST",
             headers: {
                 "Content-type": "application/json",

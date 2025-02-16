@@ -12,7 +12,7 @@ const Signup = () =>{
             pass
         }
 
-        fetch("https://notestaking-app-6w1m.onrender.com/users", {
+        fetch("https://notes-taking-app-teal.vercel.app/users", {
             method: "POST",
             headers: {
                 "Content-type": "application/json"

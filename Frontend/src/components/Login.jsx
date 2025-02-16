@@ -10,7 +10,7 @@ const Login = () =>{
             pass
         }
 
-        fetch("https://notestaking-app-6w1m.onrender.com/users/login", {
+        fetch("https://notes-taking-app-teal.vercel.app/login", {
             method: "POST",
             headers: {
                 "Content-type": "application/json"
