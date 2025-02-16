@@ -15,7 +15,7 @@ app.use(cors({
 }));
 
 app.use(express.json());
-app.get("/", (req,res)=> {
+app.use("/", (req,res)=> {
     res.json("Hello riya miss");
 });
 
@@ -27,4 +27,4 @@ connectDB().then(() => console.log("Database connected")).catch(err => console.e
 
 // ✅ Export for Vercel (Fixes crashes)
 module.exports = app;
-module.exports.handler = serverless(app);v
+module.exports.handler = serverless(app);
