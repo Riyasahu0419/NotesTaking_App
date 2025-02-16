@@ -12,7 +12,7 @@ const Signup = () =>{
             pass
         }
 
-        fetch("https://notes-taking-app-teal.vercel.app/users", {
+        fetch("https://backend-nu-five-77.vercel.app/users", {
             method: "POST",
             headers: {
                 "Content-type": "application/json"
