@@ -3,7 +3,7 @@ import {useState, useEffect} from "react"
 const Notes = () => {
     const [notes,setNotes] = useState([])  
     useEffect(()=>{
-        fetch("https://notes-taking-app-teal.vercel.app/notes", {
+        fetch("https://backend-9we6i349y-riya-sahus-projects.vercel.app/notes", {
             headers:{
                 "Authorization":`Bearer ${localStorage.getItem("accessToken")}`
             }
@@ -15,7 +15,7 @@ const Notes = () => {
     },[])
 
     const handleDelete = (noteId) => {
-        fetch(`https://notes-taking-app-teal.vercel.app/notes/${noteId}`, {
+        fetch(`https://backend-9we6i349y-riya-sahus-projects.vercel.app/${noteId}`, {
             method: "DELETE",
             headers: {
                 "Authorization": `Bearer ${localStorage.getItem("accessToken")}`

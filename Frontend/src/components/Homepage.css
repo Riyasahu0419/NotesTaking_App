@@ -1,0 +1,22 @@
+/* Homepage.css */
+.homepage {
+    text-align: center;
+    padding: 50px;
+    color: white;
+    background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .homepage h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  .homepage p {
+    font-size: 20px;
+  }
+  

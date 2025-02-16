@@ -10,7 +10,7 @@ const Login = () =>{
             pass
         }
 
-        fetch("https://notes-taking-app-teal.vercel.app/login", {
+        fetch("https://backend-9we6i349y-riya-sahus-projects.vercel.app/login", {
             method: "POST",
             headers: {
                 "Content-type": "application/json"
